@@ -1,0 +1,233 @@
+// ==============================================================================
+// Project: Customer Churn & Retention Intelligence System
+// File: powerbi/dax_measures.dax
+// Description: Production DAX Measures Library for Power BI Tabular Model
+// Author: Senior Data Analyst
+// Target Table: CustomerChurn (derived from cleaned_telco_customer_churn.csv)
+// ==============================================================================
+
+// ------------------------------------------------------------------------------
+// 1. CORE VOLUME & CHURN METRICS
+// ------------------------------------------------------------------------------
+
+Total Customers = 
+COUNTROWS('CustomerChurn')
+/* Format: #,##0 | Validated Benchmark: 7,043 */
+
+Churned Customers = 
+CALCULATE(
+    COUNTROWS('CustomerChurn'),
+    'CustomerChurn'[Churn] = "Yes"
+)
+/* Format: #,##0 | Validated Benchmark: 1,869 */
+
+Retained Customers = 
+CALCULATE(
+    COUNTROWS('CustomerChurn'),
+    'CustomerChurn'[Churn] = "No"
+)
+/* Format: #,##0 | Validated Benchmark: 5,174 */
+
+Churn Rate % = 
+DIVIDE([Churned Customers], [Total Customers], 0)
+/* Format: 0.00% | Validated Benchmark: 26.54% */
+
+Retention Rate % = 
+DIVIDE([Retained Customers], [Total Customers], 0)
+/* Format: 0.00% | Validated Benchmark: 73.46% */
+
+
+// ------------------------------------------------------------------------------
+// 2. FINANCIAL & REVENUE METRICS
+// ------------------------------------------------------------------------------
+
+Total Monthly Revenue (MRR) = 
+SUM('CustomerChurn'[MonthlyCharges])
+/* Format: $#,##0.00 | Validated Benchmark: $456,116.60 */
+
+Lost MRR = 
+CALCULATE(
+    SUM('CustomerChurn'[MonthlyCharges]),
+    'CustomerChurn'[Churn] = "Yes"
+)
+/* Format: $#,##0.00 | Validated Benchmark: $139,130.85 */
+
+Retained MRR = 
+CALCULATE(
+    SUM('CustomerChurn'[MonthlyCharges]),
+    'CustomerChurn'[Churn] = "No"
+)
+/* Format: $#,##0.00 | Validated Benchmark: $316,985.75 */
+
+Lost MRR % = 
+DIVIDE([Lost MRR], [Total Monthly Revenue (MRR)], 0)
+/* Format: 0.00% | Validated Benchmark: 30.50% */
+
+Total Cumulative Revenue = 
+SUM('CustomerChurn'[TotalCharges])
+/* Format: $#,##0.00 | Validated Benchmark: $16,056,168.70 */
+
+Average Monthly Charges = 
+AVERAGE('CustomerChurn'[MonthlyCharges])
+/* Format: $#,##0.00 | Validated Benchmark: $64.76 */
+
+Average Monthly Charges - Churned = 
+CALCULATE(
+    AVERAGE('CustomerChurn'[MonthlyCharges]),
+    'CustomerChurn'[Churn] = "Yes"
+)
+/* Format: $#,##0.00 | Validated Benchmark: $74.44 */
+
+Average Monthly Charges - Retained = 
+CALCULATE(
+    AVERAGE('CustomerChurn'[MonthlyCharges]),
+    'CustomerChurn'[Churn] = "No"
+)
+/* Format: $#,##0.00 | Validated Benchmark: $61.27 */
+
+Monthly Charge Delta = 
+[Average Monthly Charges - Churned] - [Average Monthly Charges - Retained]
+/* Format: $#,##0.00 | Validated Benchmark: +$13.17 */
+
+Average Tenure = 
+AVERAGE('CustomerChurn'[tenure])
+/* Format: 0.0 | Validated Benchmark: 32.4 months */
+
+Average Tenure - Churned = 
+CALCULATE(
+    AVERAGE('CustomerChurn'[tenure]),
+    'CustomerChurn'[Churn] = "Yes"
+)
+/* Format: 0.0 | Validated Benchmark: 18.0 months */
+
+Average Tenure - Retained = 
+CALCULATE(
+    AVERAGE('CustomerChurn'[tenure]),
+    'CustomerChurn'[Churn] = "No"
+)
+/* Format: 0.0 | Validated Benchmark: 37.6 months */
+
+Average Total Charges = 
+AVERAGE('CustomerChurn'[TotalCharges])
+/* Format: $#,##0.00 | Validated Benchmark: $2,279.73 */
+
+Customer Lifetime Value (LTV) = 
+[Average Total Charges]
+/* Format: $#,##0.00 | Validated Benchmark: $2,279.73 */
+
+Customer Lifetime Value - Retained = 
+CALCULATE(
+    AVERAGE('CustomerChurn'[TotalCharges]),
+    'CustomerChurn'[Churn] = "No"
+)
+/* Format: $#,##0.00 | Validated Benchmark: $2,549.91 */
+
+Customer Lifetime Value - Churned = 
+CALCULATE(
+    AVERAGE('CustomerChurn'[TotalCharges]),
+    'CustomerChurn'[Churn] = "Yes"
+)
+/* Format: $#,##0.00 | Validated Benchmark: $1,531.80 */
+
+
+// ------------------------------------------------------------------------------
+// 3. FLIGHT RISK & REVENUE-AT-RISK INTELLIGENCE (HEURISTIC MODEL)
+// ------------------------------------------------------------------------------
+
+Revenue at Risk (Critical MRR At Stake) = 
+CALCULATE(
+    SUM('CustomerChurn'[MonthlyCharges]),
+    'CustomerChurn'[Risk_Tier] = "1. Critical Risk (Score 7-9)"
+)
+/* Description: Total monthly billing across all 1,915 accounts in the Critical Flight Risk tier.
+   Format: $#,##0.00 | Validated Benchmark: $151,332.90 */
+
+Realized Lost MRR (Critical) = 
+CALCULATE(
+    SUM('CustomerChurn'[MonthlyCharges]),
+    'CustomerChurn'[Risk_Tier] = "1. Critical Risk (Score 7-9)",
+    'CustomerChurn'[Churn] = "Yes"
+)
+/* Description: Actual lost monthly revenue from departed accounts within the Critical tier.
+   Format: $#,##0.00 | Validated Benchmark: $90,830.95 */
+
+Critical Risk Customer Count = 
+CALCULATE(
+    COUNTROWS('CustomerChurn'),
+    'CustomerChurn'[Risk_Tier] = "1. Critical Risk (Score 7-9)"
+)
+/* Format: #,##0 | Validated Benchmark: 1,915 */
+
+Moderate Risk Customer Count = 
+CALCULATE(
+    COUNTROWS('CustomerChurn'),
+    'CustomerChurn'[Risk_Tier] = "2. Moderate Risk (Score 4-6)"
+)
+/* Format: #,##0 | Validated Benchmark: 1,822 */
+
+Low Risk Customer Count = 
+CALCULATE(
+    COUNTROWS('CustomerChurn'),
+    'CustomerChurn'[Risk_Tier] = "3. Low Risk (Score 0-3)"
+)
+/* Format: #,##0 | Validated Benchmark: 3,306 */
+
+Critical Risk Churn Rate % = 
+DIVIDE(
+    CALCULATE(
+        COUNTROWS('CustomerChurn'),
+        'CustomerChurn'[Risk_Tier] = "1. Critical Risk (Score 7-9)",
+        'CustomerChurn'[Churn] = "Yes"
+    ),
+    [Critical Risk Customer Count],
+    0
+)
+/* Format: 0.00% | Validated Benchmark: 59.32% */
+
+Critical Risk Share of Total Churn % = 
+DIVIDE(
+    CALCULATE(
+        COUNTROWS('CustomerChurn'),
+        'CustomerChurn'[Risk_Tier] = "1. Critical Risk (Score 7-9)",
+        'CustomerChurn'[Churn] = "Yes"
+    ),
+    [Churned Customers],
+    0
+)
+/* Format: 0.00% | Validated Benchmark: 60.78% (1,136 / 1,869) */
+
+
+// ------------------------------------------------------------------------------
+// 4. HIGH-ARPU & SEGMENTATION MEASURES
+// ------------------------------------------------------------------------------
+
+High ARPU Customer Count = 
+CALCULATE(
+    COUNTROWS('CustomerChurn'),
+    'CustomerChurn'[MonthlyCharges] >= 89.85
+)
+/* Format: #,##0 | Validated Benchmark: 1,760 */
+
+High ARPU Lost MRR = 
+CALCULATE(
+    SUM('CustomerChurn'[MonthlyCharges]),
+    'CustomerChurn'[MonthlyCharges] >= 89.85,
+    'CustomerChurn'[Churn] = "Yes"
+)
+/* Format: $#,##0.00 | Validated Benchmark: $64,749.50 */
+
+Fiber Optic Lost MRR = 
+CALCULATE(
+    SUM('CustomerChurn'[MonthlyCharges]),
+    'CustomerChurn'[InternetService] = "Fiber optic",
+    'CustomerChurn'[Churn] = "Yes"
+)
+/* Format: $#,##0.00 | Validated Benchmark: $118,677.60 */
+
+Month to Month Lost MRR = 
+CALCULATE(
+    SUM('CustomerChurn'[MonthlyCharges]),
+    'CustomerChurn'[Contract] = "Month-to-month",
+    'CustomerChurn'[Churn] = "Yes"
+)
+/* Format: $#,##0.00 | Validated Benchmark: $122,892.40 */

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Customer_Churn_Dashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "4d2b0d39-4d1e-4694-9e8c-d17876e36287"
+  }
+}

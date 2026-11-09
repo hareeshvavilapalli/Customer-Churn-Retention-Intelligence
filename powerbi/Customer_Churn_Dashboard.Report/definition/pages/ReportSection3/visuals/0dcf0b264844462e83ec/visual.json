@@ -1,0 +1,243 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "0dcf0b264844462e83ec",
+  "position": {
+    "x": 540,
+    "y": 435,
+    "z": 9000,
+    "height": 265,
+    "width": 720
+  },
+  "visual": {
+    "visualType": "textbox",
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Executive Retention Playbook & Action Plan'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "11D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "EXECUTIVE STRATEGIC ACTION PLAN & RETENTION PLAYBOOK\n",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "11D",
+                      "color": "#1F497D"
+                    }
+                  },
+                  {
+                    "value": "(Financial Note: Projected campaign savings are theoretical forward models, strictly distinct from actual historical cash flows: Portfolio MRR $456.1K | Realized Lost MRR $139.1K | Active Critical MRR at Stake $60.5K)\n\n",
+                    "textStyle": {
+                      "fontStyle": "italic",
+                      "fontSize": "9D",
+                      "color": "#595959"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "1. Month-to-Month Contract Conversion Campaign: ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9.5D",
+                      "color": "#000000"
+                    }
+                  },
+                  {
+                    "value": "Target 2,220 retained month-to-month subscribers ($153K/mo base; M2M contracts account for $122.9K / 88.3% of lost MRR). Deploy a 10% monthly discount or streaming perk for signing an annual commitment. Modeled 25% conversion (555 customers) reduces churn from 42.7% to 11.3%, shielding ",
+                    "textStyle": {
+                      "fontSize": "9D",
+                      "color": "#262626"
+                    }
+                  },
+                  {
+                    "value": "~$38,800/mo ($465,600 ARR)",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9D",
+                      "color": "#2E7D32"
+                    }
+                  },
+                  {
+                    "value": " in recurring revenue.\n\n",
+                    "textStyle": {
+                      "fontSize": "9D",
+                      "color": "#262626"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "2. Automated Payment (Auto-Pay) Incentive Program: ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9.5D",
+                      "color": "#000000"
+                    }
+                  },
+                  {
+                    "value": "Target 1,294 retained Electronic Check subscribers (churn at 45.3% vs 15.2% for auto-pay). Offer a $5/month statement credit to migrate to automated Bank ACH or Credit Card. Modeled 40% migration (518 customers) eliminates manual friction, preserving ",
+                    "textStyle": {
+                      "fontSize": "9D",
+                      "color": "#262626"
+                    }
+                  },
+                  {
+                    "value": "~$8,900/mo ($106,800 ARR)",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9D",
+                      "color": "#2E7D32"
+                    }
+                  },
+                  {
+                    "value": " in recurring revenue.\n\n",
+                    "textStyle": {
+                      "fontSize": "9D",
+                      "color": "#262626"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "3. First 90-Day High-Touch Onboarding & Security Bundling: ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9.5D",
+                      "color": "#000000"
+                    }
+                  },
+                  {
+                    "value": "Target 1,149 retained subscribers in months 0-12 (55.5% of all churn events occur in Year 1, 47.4% churn rate). Establish proactive Day-14, 30, 60, and 90 check-ins plus free 6-month Online Security. Modeled 15% relative churn reduction protects ~155 accounts, saving ",
+                    "textStyle": {
+                      "fontSize": "9D",
+                      "color": "#262626"
+                    }
+                  },
+                  {
+                    "value": "~$10,230/mo ($122,760 ARR)",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9D",
+                      "color": "#2E7D32"
+                    }
+                  },
+                  {
+                    "value": " in recurring revenue.\n\n",
+                    "textStyle": {
+                      "fontSize": "9D",
+                      "color": "#262626"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "4. Fiber Optic Customer Support Retention Campaign: ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9.5D",
+                      "color": "#000000"
+                    }
+                  },
+                  {
+                    "value": "Target 1,799 retained Fiber Optic accounts lacking Tech Support (Fiber accounts lost $118.7K MRR at 41.9% churn). Bundling Tech Support decreases churn from 41.6% to 15.2%. Automatically package free Tech Support with premium tiers ($80+/mo), shielding ",
+                    "textStyle": {
+                      "fontSize": "9D",
+                      "color": "#262626"
+                    }
+                  },
+                  {
+                    "value": "~$21,770/mo ($261,240 ARR)",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9D",
+                      "color": "#2E7D32"
+                    }
+                  },
+                  {
+                    "value": " direct, scaling to $47.8K/mo ($573.6K ARR) with full security bundle.\n\n",
+                    "textStyle": {
+                      "fontSize": "9D",
+                      "color": "#262626"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Total Modeled Opportunity: ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9.5D",
+                      "color": "#1F497D"
+                    }
+                  },
+                  {
+                    "value": "Potential gross preservation of up to ",
+                    "textStyle": {
+                      "fontSize": "9D",
+                      "color": "#262626"
+                    }
+                  },
+                  {
+                    "value": "~$105,730/mo ($1,268,760 ARR)",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9D",
+                      "color": "#2E7D32"
+                    }
+                  },
+                  {
+                    "value": " across the active customer portfolio upon full program adoption.",
+                    "textStyle": {
+                      "fontSize": "9D",
+                      "color": "#262626"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,487 @@
+{
+  "compatibilityLevel": 1606,
+  "model": {
+    "annotations": [
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"CustomerChurn\"]"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      }
+    ],
+    "collation": "Latin1_General_100_BIN2_UTF8",
+    "culture": "en-US",
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "CustomerChurn",
+        "columns": [
+          {
+            "name": "customerID",
+            "dataType": "string",
+            "lineageTag": "e3a1e54a-b784-48ec-a4ae-4c75133bc21c",
+            "sourceColumn": "customerID"
+          },
+          {
+            "name": "gender",
+            "dataType": "string",
+            "lineageTag": "4a8e80fc-2f69-49fe-a12e-dcec0b818fb8",
+            "sourceColumn": "gender"
+          },
+          {
+            "name": "SeniorCitizen",
+            "dataType": "int64",
+            "lineageTag": "fbc1236c-9b09-48d0-9402-81fa73ec6f93",
+            "sourceColumn": "SeniorCitizen"
+          },
+          {
+            "name": "Partner",
+            "dataType": "string",
+            "lineageTag": "dc9a9b9d-7601-4a60-a160-56f17160453b",
+            "sourceColumn": "Partner"
+          },
+          {
+            "name": "Dependents",
+            "dataType": "string",
+            "lineageTag": "64aa4de4-48e2-412d-a37c-01acb6f9d24f",
+            "sourceColumn": "Dependents"
+          },
+          {
+            "name": "tenure",
+            "dataType": "int64",
+            "lineageTag": "c6a8493c-e7b3-48cc-9209-9c669a2a5fad",
+            "sourceColumn": "tenure"
+          },
+          {
+            "name": "PhoneService",
+            "dataType": "string",
+            "lineageTag": "3817f202-ccb1-4dcd-864a-488e7fe7fe23",
+            "sourceColumn": "PhoneService"
+          },
+          {
+            "name": "MultipleLines",
+            "dataType": "string",
+            "lineageTag": "4280457f-394e-4d1c-9c69-9773e0661508",
+            "sourceColumn": "MultipleLines"
+          },
+          {
+            "name": "InternetService",
+            "dataType": "string",
+            "lineageTag": "c609d1ea-fae1-4aac-9413-dcf5e276454e",
+            "sourceColumn": "InternetService"
+          },
+          {
+            "name": "OnlineSecurity",
+            "dataType": "string",
+            "lineageTag": "15a39b85-13c1-4de6-880e-9756a7bd9df5",
+            "sourceColumn": "OnlineSecurity"
+          },
+          {
+            "name": "OnlineBackup",
+            "dataType": "string",
+            "lineageTag": "2ae98737-2634-4d8e-a522-aeb45b7b311a",
+            "sourceColumn": "OnlineBackup"
+          },
+          {
+            "name": "DeviceProtection",
+            "dataType": "string",
+            "lineageTag": "f6481e42-3009-479a-a1df-f89c00c6d063",
+            "sourceColumn": "DeviceProtection"
+          },
+          {
+            "name": "TechSupport",
+            "dataType": "string",
+            "lineageTag": "7d26b341-6501-4c1d-815c-584e61d88c1c",
+            "sourceColumn": "TechSupport"
+          },
+          {
+            "name": "StreamingTV",
+            "dataType": "string",
+            "lineageTag": "41555e39-d204-4c8b-a868-a5fb4d7da6fc",
+            "sourceColumn": "StreamingTV"
+          },
+          {
+            "name": "StreamingMovies",
+            "dataType": "string",
+            "lineageTag": "1d989ddd-52f5-4fa0-b516-d99e51added3",
+            "sourceColumn": "StreamingMovies"
+          },
+          {
+            "name": "Contract",
+            "dataType": "string",
+            "lineageTag": "4e31d1ac-0e1b-481e-b74c-be4224b6c18c",
+            "sourceColumn": "Contract"
+          },
+          {
+            "name": "PaperlessBilling",
+            "dataType": "string",
+            "lineageTag": "14e9e5f9-8d91-42ae-846b-f168f4d033c1",
+            "sourceColumn": "PaperlessBilling"
+          },
+          {
+            "name": "PaymentMethod",
+            "dataType": "string",
+            "lineageTag": "60364dbc-f3c3-4408-8685-9f950a3264ff",
+            "sourceColumn": "PaymentMethod"
+          },
+          {
+            "name": "MonthlyCharges",
+            "dataType": "decimal",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "lineageTag": "2106bfbf-8007-4fed-b4c7-2ccfe39ee319",
+            "sourceColumn": "MonthlyCharges"
+          },
+          {
+            "name": "TotalCharges",
+            "dataType": "decimal",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "lineageTag": "33066474-8db1-439d-8bf0-f43eba928836",
+            "sourceColumn": "TotalCharges"
+          },
+          {
+            "name": "Churn",
+            "dataType": "string",
+            "lineageTag": "f09da263-bba8-40ba-a249-8a99b6aa8cf5",
+            "sourceColumn": "Churn"
+          },
+          {
+            "name": "SeniorCitizen_Label",
+            "dataType": "string",
+            "lineageTag": "34de53f3-943b-464d-b34d-ba4d8c65e066",
+            "sourceColumn": "SeniorCitizen_Label"
+          },
+          {
+            "name": "tenure_group",
+            "dataType": "string",
+            "lineageTag": "2dd675a3-7bfd-420e-ac68-61bc4ea4f80e",
+            "sortByColumn": "Tenure_Group_Sort",
+            "sourceColumn": "tenure_group"
+          },
+          {
+            "name": "payment_category",
+            "dataType": "string",
+            "lineageTag": "e6004435-137b-4d25-9fbe-d70d934a5461",
+            "sourceColumn": "payment_category"
+          },
+          {
+            "name": "service_count",
+            "dataType": "int64",
+            "lineageTag": "84cbc85c-0d20-4875-a882-a6bb6f79a21e",
+            "sourceColumn": "service_count"
+          },
+          {
+            "name": "Tenure_Group_Sort",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "8628eff1-56a1-4116-acc7-6a5a1863392b",
+            "sourceColumn": "Tenure_Group_Sort"
+          },
+          {
+            "name": "Risk_Score",
+            "dataType": "int64",
+            "lineageTag": "5fbe28e1-b21d-4fcd-95f2-999e6a9e7c88",
+            "sourceColumn": "Risk_Score"
+          },
+          {
+            "name": "Risk_Tier",
+            "dataType": "string",
+            "lineageTag": "46613a13-4520-461a-a208-f89ede4c1706",
+            "sortByColumn": "Risk_Tier_Sort",
+            "sourceColumn": "Risk_Tier"
+          },
+          {
+            "name": "Risk_Tier_Sort",
+            "dataType": "int64",
+            "isHidden": true,
+            "lineageTag": "525cc064-f135-43d9-a303-ead51d205520",
+            "sourceColumn": "Risk_Tier_Sort"
+          }
+        ],
+        "lineageTag": "08b34900-f666-4663-9138-9a14af61c9d3",
+        "measures": [
+          {
+            "name": "Total Customers",
+            "displayFolder": "1. Volume & Churn",
+            "expression": "COUNTROWS('CustomerChurn')",
+            "formatString": "#,##0",
+            "lineageTag": "e4dce773-b8d3-4120-b09a-b8f477dfc384"
+          },
+          {
+            "name": "Churned Customers",
+            "displayFolder": "1. Volume & Churn",
+            "expression": "CALCULATE(COUNTROWS('CustomerChurn'), 'CustomerChurn'[Churn] = \"Yes\")",
+            "formatString": "#,##0",
+            "lineageTag": "e2efccaa-f1de-4f43-8ba8-b1f7ee8ad171"
+          },
+          {
+            "name": "Retained Customers",
+            "displayFolder": "1. Volume & Churn",
+            "expression": "CALCULATE(COUNTROWS('CustomerChurn'), 'CustomerChurn'[Churn] = \"No\")",
+            "formatString": "#,##0",
+            "lineageTag": "b6dedb66-4755-4048-92cb-c99bbe49d10c"
+          },
+          {
+            "name": "Churn Rate %",
+            "displayFolder": "1. Volume & Churn",
+            "expression": "DIVIDE([Churned Customers], [Total Customers], 0)",
+            "formatString": "0.00%",
+            "lineageTag": "c9958e2b-1288-41d4-ae45-8ad4b73537da"
+          },
+          {
+            "name": "Retention Rate %",
+            "displayFolder": "1. Volume & Churn",
+            "expression": "DIVIDE([Retained Customers], [Total Customers], 0)",
+            "formatString": "0.00%",
+            "lineageTag": "e22c7777-9667-44c5-8b1f-82684abc1543"
+          },
+          {
+            "name": "Total Monthly Revenue (MRR)",
+            "displayFolder": "2. Financial & Revenue",
+            "expression": "SUM('CustomerChurn'[MonthlyCharges])",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "lineageTag": "45980e6c-2989-4169-9298-41e53d90e4bc"
+          },
+          {
+            "name": "Lost MRR",
+            "displayFolder": "2. Financial & Revenue",
+            "expression": "CALCULATE(SUM('CustomerChurn'[MonthlyCharges]), 'CustomerChurn'[Churn] = \"Yes\")",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "lineageTag": "c41548c8-9536-452f-89e2-705763beb4ef"
+          },
+          {
+            "name": "Retained MRR",
+            "displayFolder": "2. Financial & Revenue",
+            "expression": "CALCULATE(SUM('CustomerChurn'[MonthlyCharges]), 'CustomerChurn'[Churn] = \"No\")",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "lineageTag": "5b08a2f0-e128-49f1-b30a-2e9bc14a423c"
+          },
+          {
+            "name": "Lost MRR %",
+            "displayFolder": "2. Financial & Revenue",
+            "expression": "DIVIDE([Lost MRR], [Total Monthly Revenue (MRR)], 0)",
+            "formatString": "0.00%",
+            "lineageTag": "45e3c1ac-4fbf-423d-9e73-9a75ba8c296a"
+          },
+          {
+            "name": "Total Cumulative Revenue",
+            "displayFolder": "2. Financial & Revenue",
+            "expression": "SUM('CustomerChurn'[TotalCharges])",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "lineageTag": "6484b222-db95-4a0b-975d-c478a7eaadce"
+          },
+          {
+            "name": "Average Monthly Charges",
+            "displayFolder": "2. Financial & Revenue",
+            "expression": "AVERAGE('CustomerChurn'[MonthlyCharges])",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "lineageTag": "a508f793-b0fe-4328-88fb-0fb824231f0d"
+          },
+          {
+            "name": "Average Monthly Charges - Churned",
+            "displayFolder": "2. Financial & Revenue",
+            "expression": "CALCULATE(AVERAGE('CustomerChurn'[MonthlyCharges]), 'CustomerChurn'[Churn] = \"Yes\")",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "lineageTag": "60ab0002-7524-4c8f-9836-a8d81117cf39"
+          },
+          {
+            "name": "Average Monthly Charges - Retained",
+            "displayFolder": "2. Financial & Revenue",
+            "expression": "CALCULATE(AVERAGE('CustomerChurn'[MonthlyCharges]), 'CustomerChurn'[Churn] = \"No\")",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "lineageTag": "6403ae0d-6479-469d-b7e9-7d51e1cb2ad6"
+          },
+          {
+            "name": "Monthly Charge Delta",
+            "displayFolder": "2. Financial & Revenue",
+            "expression": "[Average Monthly Charges - Churned] - [Average Monthly Charges - Retained]",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "lineageTag": "be602185-9625-4718-9ea2-a5dc9f8a08b1"
+          },
+          {
+            "name": "Average Tenure",
+            "displayFolder": "2. Financial & Revenue",
+            "expression": "AVERAGE('CustomerChurn'[tenure])",
+            "formatString": "0.0",
+            "lineageTag": "b593d4f8-9636-4a3e-9172-0acb19acb515"
+          },
+          {
+            "name": "Average Tenure - Churned",
+            "displayFolder": "2. Financial & Revenue",
+            "expression": "CALCULATE(AVERAGE('CustomerChurn'[tenure]), 'CustomerChurn'[Churn] = \"Yes\")",
+            "formatString": "0.0",
+            "lineageTag": "2eb59573-5c21-4bea-ace3-6c34d33c8f5a"
+          },
+          {
+            "name": "Average Tenure - Retained",
+            "displayFolder": "2. Financial & Revenue",
+            "expression": "CALCULATE(AVERAGE('CustomerChurn'[tenure]), 'CustomerChurn'[Churn] = \"No\")",
+            "formatString": "0.0",
+            "lineageTag": "52a2233d-04ec-499b-8056-668b80bf24cb"
+          },
+          {
+            "name": "Average Total Charges",
+            "displayFolder": "2. Financial & Revenue",
+            "expression": "AVERAGE('CustomerChurn'[TotalCharges])",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "lineageTag": "2630e957-fb06-4d6a-b002-5fefe4314fe5"
+          },
+          {
+            "name": "Customer Lifetime Value (LTV)",
+            "displayFolder": "2. Financial & Revenue",
+            "expression": "[Average Total Charges]",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "lineageTag": "6c0c5a8d-ef39-473f-a411-fb1dfa0bc299"
+          },
+          {
+            "name": "Revenue at Risk (Critical MRR At Stake)",
+            "displayFolder": "3. Risk Intelligence",
+            "expression": "CALCULATE(SUM('CustomerChurn'[MonthlyCharges]), 'CustomerChurn'[Risk_Tier] = \"1. Critical Risk (Score 7-9)\")",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "lineageTag": "9887bab5-3c5d-48c9-b7d6-390b4a0d9e38"
+          },
+          {
+            "name": "Realized Lost MRR (Critical)",
+            "displayFolder": "3. Risk Intelligence",
+            "expression": "CALCULATE(SUM('CustomerChurn'[MonthlyCharges]), 'CustomerChurn'[Risk_Tier] = \"1. Critical Risk (Score 7-9)\", 'CustomerChurn'[Churn] = \"Yes\")",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "lineageTag": "3f91b52e-8d74-4d28-ba55-163c6ea3b10f"
+          },
+          {
+            "name": "Critical Risk Customer Count",
+            "displayFolder": "3. Risk Intelligence",
+            "expression": "CALCULATE(COUNTROWS('CustomerChurn'), 'CustomerChurn'[Risk_Tier] = \"1. Critical Risk (Score 7-9)\")",
+            "formatString": "#,##0",
+            "lineageTag": "cb6b4cee-715c-496b-9c9e-f41c2dda89b6"
+          },
+          {
+            "name": "Moderate Risk Customer Count",
+            "displayFolder": "3. Risk Intelligence",
+            "expression": "CALCULATE(COUNTROWS('CustomerChurn'), 'CustomerChurn'[Risk_Tier] = \"2. Moderate Risk (Score 4-6)\")",
+            "formatString": "#,##0",
+            "lineageTag": "e44f3742-7bd1-42b9-b707-4cca74cc46a5"
+          },
+          {
+            "name": "Low Risk Customer Count",
+            "displayFolder": "3. Risk Intelligence",
+            "expression": "CALCULATE(COUNTROWS('CustomerChurn'), 'CustomerChurn'[Risk_Tier] = \"3. Low Risk (Score 0-3)\")",
+            "formatString": "#,##0",
+            "lineageTag": "8a2142e4-ae0c-4aab-9022-e5f979503f11"
+          },
+          {
+            "name": "Critical Risk Churn Rate %",
+            "displayFolder": "3. Risk Intelligence",
+            "expression": "DIVIDE(CALCULATE(COUNTROWS('CustomerChurn'), 'CustomerChurn'[Risk_Tier] = \"1. Critical Risk (Score 7-9)\", 'CustomerChurn'[Churn] = \"Yes\"), [Critical Risk Customer Count], 0)",
+            "formatString": "0.00%",
+            "lineageTag": "7b1dd08c-435c-4a56-92f1-70dd4c06a869"
+          },
+          {
+            "name": "Critical Risk Share of Total Churn %",
+            "displayFolder": "3. Risk Intelligence",
+            "expression": "DIVIDE(CALCULATE(COUNTROWS('CustomerChurn'), 'CustomerChurn'[Risk_Tier] = \"1. Critical Risk (Score 7-9)\", 'CustomerChurn'[Churn] = \"Yes\"), [Churned Customers], 0)",
+            "formatString": "0.00%",
+            "lineageTag": "b36a3bbc-9265-4186-a331-0afa3fe73361"
+          },
+          {
+            "name": "High ARPU Lost MRR",
+            "displayFolder": "4. Segment Losses",
+            "expression": "CALCULATE(SUM('CustomerChurn'[MonthlyCharges]), 'CustomerChurn'[MonthlyCharges] >= 89.85, 'CustomerChurn'[Churn] = \"Yes\")",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "lineageTag": "f69f1fc1-694f-49a2-8b23-da0f0a9b0de0"
+          },
+          {
+            "name": "Fiber Optic Lost MRR",
+            "displayFolder": "4. Segment Losses",
+            "expression": "CALCULATE(SUM('CustomerChurn'[MonthlyCharges]), 'CustomerChurn'[InternetService] = \"Fiber optic\", 'CustomerChurn'[Churn] = \"Yes\")",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "lineageTag": "c2da1515-5800-4336-a5f2-90c770fefe62"
+          },
+          {
+            "name": "Month to Month Lost MRR",
+            "displayFolder": "4. Segment Losses",
+            "expression": "CALCULATE(SUM('CustomerChurn'[MonthlyCharges]), 'CustomerChurn'[Contract] = \"Month-to-month\", 'CustomerChurn'[Churn] = \"Yes\")",
+            "formatString": "\\$#,0.00;(\\$#,0.00);\\$#,0.00",
+            "lineageTag": "fa1bac33-ee8c-4938-8f8e-151436841a41"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "CustomerChurn",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"C:\\Users\\V.Leela prasad\\OneDrive\\Desktop\\Customer-Churn-Retention-Intelligence\\dataset\\cleaned_telco_customer_churn.csv\"), [Delimiter=\",\", Columns=25, Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+                "    PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    TypedTable = Table.TransformColumnTypes(PromotedHeaders, {",
+                "        {\"customerID\", type text},",
+                "        {\"gender\", type text},",
+                "        {\"SeniorCitizen\", Int64.Type},",
+                "        {\"Partner\", type text},",
+                "        {\"Dependents\", type text},",
+                "        {\"tenure\", Int64.Type},",
+                "        {\"PhoneService\", type text},",
+                "        {\"MultipleLines\", type text},",
+                "        {\"InternetService\", type text},",
+                "        {\"OnlineSecurity\", type text},",
+                "        {\"OnlineBackup\", type text},",
+                "        {\"DeviceProtection\", type text},",
+                "        {\"TechSupport\", type text},",
+                "        {\"StreamingTV\", type text},",
+                "        {\"StreamingMovies\", type text},",
+                "        {\"Contract\", type text},",
+                "        {\"PaperlessBilling\", type text},",
+                "        {\"PaymentMethod\", type text},",
+                "        {\"MonthlyCharges\", Currency.Type},",
+                "        {\"TotalCharges\", Currency.Type},",
+                "        {\"Churn\", type text},",
+                "        {\"SeniorCitizen_Label\", type text},",
+                "        {\"tenure_group\", type text},",
+                "        {\"payment_category\", type text},",
+                "        {\"service_count\", Int64.Type}",
+                "    }),",
+                "    AddedTenureSort = Table.AddColumn(TypedTable, \"Tenure_Group_Sort\", each ",
+                "        if [tenure_group] = \"0-12m\" then 1",
+                "        else if [tenure_group] = \"13-24m\" then 2",
+                "        else if [tenure_group] = \"25-36m\" then 3",
+                "        else if [tenure_group] = \"37-48m\" then 4",
+                "        else if [tenure_group] = \"49-60m\" then 5",
+                "        else 6,",
+                "        Int64.Type",
+                "    ),",
+                "    AddedRiskScore = Table.AddColumn(AddedTenureSort, \"Risk_Score\", each ",
+                "        (if [Contract] = \"Month-to-month\" then 3 else 0) +",
+                "        (if [InternetService] = \"Fiber optic\" then 2 else 0) +",
+                "        (if [PaymentMethod] = \"Electronic check\" then 2 else 0) +",
+                "        (if [tenure] <= 12 then 2 else 0),",
+                "        Int64.Type",
+                "    ),",
+                "    AddedRiskTier = Table.AddColumn(AddedRiskScore, \"Risk_Tier\", each ",
+                "        if [Risk_Score] >= 7 then \"1. Critical Risk (Score 7-9)\"",
+                "        else if [Risk_Score] >= 4 then \"2. Moderate Risk (Score 4-6)\"",
+                "        else \"3. Low Risk (Score 0-3)\",",
+                "        type text",
+                "    ),",
+                "    AddedRiskTierSort = Table.AddColumn(AddedRiskTier, \"Risk_Tier_Sort\", each ",
+                "        if [Risk_Score] >= 7 then 1",
+                "        else if [Risk_Score] >= 4 then 2",
+                "        else 3,",
+                "        Int64.Type",
+                "    )",
+                "in",
+                "    AddedRiskTierSort"
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
